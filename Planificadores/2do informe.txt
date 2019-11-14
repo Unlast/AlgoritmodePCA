@@ -1,0 +1,12 @@
+El algoritmo LPNRR tiene como idea darle prioridad a los procesos que van a ocupar mayor tiempo en su ejecucion, tambien se les asignan un quantum para utilizar el procesador de manera mas equitativa para todos los procesos. 
+En el tiempo numero dos ingresan dos procesos a la cola de listos, p2 con un tiempo total de 18 y p7 con un tiempo total de 9, el algortimo considera con mas prioridad a p2 ya que su tiempo total de ejecucion es de 18, por lo tanto es el primero en ejecutar y tambien sera el primero en terminar debido a su temprana entrada al procesador a comparacion de los demas procesos.
+Un buen punto para analizar es el caso del proceso p3 y el proceso p6. Los dos llegan en el mismo tiempo (6) pero p3 tiene un tiempo total de ejecucion de 12 y p6 de 20
+lo que genera que p6 finalice su ejecucion primero y p3 en ante ultima posicion. 
+Como era de esperarse, procesos con un tiempo maximo de ejecucion elevado ((p6),(p2),(p8),(p4)), terminaron su ejecucion en las primeras posiciones mientras que procesos
+con un tiempo total menor, finalizaron su ejecucion en las ultimas posiciones, como el caso de p1,p3,p5,p7.
+Cabe destacar que cuando un proceso listo espera en la cola para utilizar el procesador y llega un proceso con mas prioridad, el algoritmo modifica la cola de listos poniendo en primer lugar al proceso con mas prioridad.
+El algoritmo LPNRR desperdició 46.875 W, en relación a los procesos elegidos en la entrega anterior desperdición 2 W menos que FIFO y Round Robin, pero gastó 18 W más que FIFO y 22 más que SPN.
+Con respecto a las penalizaciones estuvo por encima de todos los algoritmos previamente elegidos, aunque está próximo al algoritmo FIFO con una diferencia de +0.35 y a Round Robin +0.7, y mucha más penalización que Prioridad Apropiativo +2.5 y el doble de penalización que SPN +2.7.
+El tiempo promedio de respuesta del LPNRR fue del 59.875, aproximadamente 2 puntos menos que Round Robin y FIFO, pero a +15 de de Prioridad Apropiativo y +20.5 de SPN.
+Este algoritmo logró terminar los procesos más largos antes con una penalización similar a la de algoritmos similares como FIFO y Round Robin (siendo este último la version apropiativa de FIFO) y con un mejor tiempo de respuesta.
+Sin embargo con no logró superar los tiempos de Prioridad Apropiativo ni de SPN, llegando a tener penalizaciones del doble de tiempo que SPN, y mayor tiempo de Respuesta que ambos.
